@@ -1,0 +1,126 @@
+/* Custom properties */
+:root {
+    --clr-primary-400: hsl(25, 97%, 53%);
+
+    --clr-neutral-white-100: hsl(0, 0%, 100%);
+    --clr-neutral-grey-400: hsl(217, 12%, 63%);
+    --clr-neutral-grey-600: hsl(216, 12%, 24%);
+    --clr-neutral-blue-800: hsl(213, 19%, 18%);
+    --clr-neutral-blue-900: hsl(216, 12%, 8%);
+
+    --fw-regular: 400;
+    --fw-bold: 600;
+
+    --content-padding: 2rem;
+}
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+    user-select: none;
+}
+h1 {
+    color: var(--clr-neutral-white-100);
+    font-size: 1.8rem;
+}
+li {
+    list-style: none;
+}
+/* Utility */
+.circle {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--clr-neutral-grey-600);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.circle[data-icon="star"]::before {
+    content: "";
+    width: 17px;
+    height: 16px;
+    background-image: url("images/icon-star.svg");
+}
+button {
+    cursor: pointer;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-white-100);
+    border: 0;
+    border-radius: 2rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    font-weight: var(--fw-bold);
+}
+button:is(:hover, :focus) {
+    background-color: var(--clr-neutral-white-100);
+    color: var(--clr-primary-400);
+}
+/* General Styling */
+body {
+    background-color: var(--clr-neutral-blue-900);
+    color: var(--clr-neutral-grey-400);
+    font-family: "Overpass", sans-serif;
+
+    display: grid;
+    place-items: center;
+    margin: 2rem;
+}
+/* Rating Card Styling */
+.card {
+    background-color: var(--clr-neutral-blue-800);
+    display: grid;
+    gap: 1.25rem;
+    padding: var(--content-padding);
+    border-radius: 1rem;
+    max-width: 375px;
+}
+
+.title {
+    color: var(--clr-neutral-white-100);
+}
+.card p {
+    line-height: 1.5;
+}
+.ratings {
+    margin: 0.5rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: var(--fw-bold);
+}
+
+.ratings .rating:is(:hover, :focus) {
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-white-100);
+}
+.rating-selected {
+    background-color: var(--clr-neutral-grey-400);
+    color: var(--clr-neutral-white-100);
+}
+/* Thank You Styling */
+.thank_you_card {
+    display: grid;
+    gap: 1.25rem;
+    place-items: center;
+    text-align: center;
+}
+.result {
+    background-color: var(--clr-neutral-grey-600);
+    padding: 0.75rem 1rem 0.5rem 1rem;
+    border-radius: 2rem;
+    color: var(--clr-primary-400);
+}
+.greet {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0.75rem 0rem;
+}
+.hidden {
+    display: none;
+}
